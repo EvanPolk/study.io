@@ -1,4 +1,4 @@
-package dev.evanpolk.study.io.Flashcard;
+package dev.evanpolk.study.io.FlashcardSet;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;

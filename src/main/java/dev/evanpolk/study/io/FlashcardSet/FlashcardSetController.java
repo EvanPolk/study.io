@@ -1,4 +1,4 @@
-package dev.evanpolk.study.io.Flashcard;
+package dev.evanpolk.study.io.FlashcardSet;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;

@@ -1,9 +1,11 @@
-package dev.evanpolk.study.io.Flashcard;
+package dev.evanpolk.study.io.FlashcardSet;
 
+import dev.evanpolk.study.io.Flashcard.Flashcard;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.ReadOnlyProperty;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.DocumentReference;
 
