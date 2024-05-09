@@ -1,6 +1,7 @@
 package dev.evanpolk.study.io.Flashcard;
 
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
@@ -18,7 +19,7 @@ public class FlashcardService {
     }
 
     public Flashcard getFlashcardById(String id) {
-        return flashcardRepository.findFlashcardById(id).orElse(null);
+        return flashcardRepository.findById(id).orElse(null);
     }
 
     public void addNewFlashcard(String front, String back) {
@@ -29,17 +30,19 @@ public class FlashcardService {
         flashcardRepository.deleteById(id);
     }
 
+    @Transactional
     public void updateFlashcardById(String id, String front, String back) {
-        Flashcard flashcard = flashcardRepository.findFlashcardById(id)
+        Flashcard flashcard = flashcardRepository.findById(id)
                 .orElseThrow(() -> new IllegalStateException(
                         "Flashcard with id: " + id + ", does not exist"));
-
         if (front != null && !front.isEmpty() && !front.equals(flashcard.getFront())) {
             flashcard.setFront(front);
+            System.out.println(flashcard);
         }
 
         if (back != null && !back.isEmpty() && !back.equals(flashcard.getBack())) {
             flashcard.setBack(back);
         }
+        flashcardRepository.save(flashcard);
     }
 }

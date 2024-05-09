@@ -7,5 +7,5 @@ import java.util.Optional;
 
 @Repository
 public interface FlashcardRepository extends MongoRepository<Flashcard, String> {
-    Optional<Flashcard> findFlashcardById(String id);
+    Optional<Flashcard> findById(String id);
 }

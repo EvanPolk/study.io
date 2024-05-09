@@ -1,10 +1,9 @@
 package dev.evanpolk.study.io.FlashcardSet;
 
+import dev.evanpolk.study.io.Flashcard.Flashcard;
 import dev.evanpolk.study.io.Flashcard.FlashcardRepository;
 import org.springframework.stereotype.Service;
 import java.util.List;
-import java.util.Optional;
-
 @Service
 public class FlashcardSetService {
     private final FlashcardSetRepository flashcardSetRepository;
@@ -21,5 +20,59 @@ public class FlashcardSetService {
 
     public FlashcardSet findFlashcardSetById(String id) {
         return flashcardSetRepository.findById(id).orElse(null);
+    }
+
+    public void addNewFlashcardSet(FlashcardSet flashcardSet) {
+        flashcardSet.setId(null);
+        flashcardSetRepository.save(flashcardSet);
+    }
+
+    public void addNewFlashcardToFlashcardSet(String flashcardSetId, Flashcard flashcard) {
+        FlashcardSet flashcardSet = flashcardSetRepository.findById(flashcardSetId)
+                .orElseThrow(() -> new IllegalArgumentException(
+                        "FlashcardSet with id: " + flashcardSetId + ", does not exist"
+                ));
+        flashcard.setId(null);
+        flashcardRepository.save(flashcard);
+        flashcardSet.addFlashcard(flashcard);
+        flashcardSetRepository.save(flashcardSet);
+    }
+
+    public void deleteFlashcardSetByID(String flashcardSetId) {
+        FlashcardSet flashcardSet = flashcardSetRepository.findById(flashcardSetId)
+                .orElseThrow(() -> new IllegalArgumentException(
+                        "FlashcardSet with id: " + flashcardSetId + ", does not exist"
+                ));
+        for (Flashcard flashcard : flashcardSet.getFlashcards()) {
+            flashcardRepository.delete(flashcard);
+        }
+        flashcardSetRepository.delete(flashcardSet);
+    }
+
+    public void deleteFlashcardInFlashcardSet(String flashcardSetId, String flashcardId) {
+        FlashcardSet flashcardSet = flashcardSetRepository.findById(flashcardSetId)
+                .orElseThrow(() -> new IllegalArgumentException(
+                        "FlashcardSet with id: " + flashcardSetId + ", does not exist"
+                ));
+        Flashcard flashcard = flashcardRepository.findById(flashcardId)
+                .orElseThrow(() -> new IllegalArgumentException(
+                        "Flashcard with id: " + flashcardId + ", does not exist"
+                ));
+        flashcardSet.removeFlashcard(flashcard);
+        flashcardRepository.delete(flashcard);
+        flashcardSetRepository.save(flashcardSet);
+    }
+
+    public void updateFlashcardSet(String flashcardSetId, String setName) {
+        FlashcardSet flashcardSet = flashcardSetRepository.findById(flashcardSetId)
+                .orElseThrow(() -> new IllegalArgumentException(
+                        "FlashcardSet with id: " + flashcardSetId + ", does not exist"
+                ));
+        if (flashcardSet.getSetName() != null &&
+                !flashcardSet.getSetName().isEmpty() &&
+                !flashcardSet.getSetName().equals(setName)) {
+            flashcardSet.setSetName(setName);
+        }
+        flashcardSetRepository.save(flashcardSet);
     }
 }

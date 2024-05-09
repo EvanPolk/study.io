@@ -20,4 +20,12 @@ public class Flashcard {
         this.front = front;
         this.back = back;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (!(o instanceof Flashcard)) {
+            return false;
+        }
+        return ((Flashcard) o).getId().equals(id);
+    }
 }

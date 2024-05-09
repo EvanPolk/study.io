@@ -31,4 +31,8 @@ public class FlashcardSet {
     public boolean addFlashcard(Flashcard flashcard) {
         return flashcards.add(flashcard);
     }
+
+    public void removeFlashcard(Flashcard flashcard) {
+        flashcards.remove(flashcard);
+    }
 }

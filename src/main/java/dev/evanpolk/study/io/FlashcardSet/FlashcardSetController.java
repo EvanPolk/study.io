@@ -1,5 +1,6 @@
 package dev.evanpolk.study.io.FlashcardSet;
 
+import dev.evanpolk.study.io.Flashcard.Flashcard;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -23,5 +24,33 @@ public class FlashcardSetController {
     @GetMapping(path = "/{flashcardSetId}")
     public FlashcardSet getFlashcardSetById(@PathVariable("flashcardSetId") String id) {
         return flashcardSetService.findFlashcardSetById(id);
+    }
+
+    @PostMapping
+    public void addNewFlashcardSet(@RequestBody FlashcardSet flashcardSet) {
+        flashcardSetService.addNewFlashcardSet(flashcardSet);
+    }
+
+    @PostMapping(path = "/{flashcardSetId}")
+    public void addNewFlashcardToFlashcardSet(@PathVariable("flashcardSetId") String flashcardSetId,
+                                              @RequestBody Flashcard flashcard) {
+        flashcardSetService.addNewFlashcardToFlashcardSet(flashcardSetId, flashcard);
+    }
+
+    @DeleteMapping(path = "/{flashcardSetId}")
+    public void deleteFlashcardSetById(@PathVariable("flashcardSetId") String flashcardSetId) {
+        flashcardSetService.deleteFlashcardSetByID(flashcardSetId);
+    }
+
+    @DeleteMapping(path = "/{flashcardSetId}/{flashcardId}")
+    public void deleteFlashcardInFlashcardSet(@PathVariable("flashcardSetId") String flashcardSetId,
+                                              @PathVariable("flashcardId") String flashcardId) {
+        flashcardSetService.deleteFlashcardInFlashcardSet(flashcardSetId, flashcardId);
+    }
+
+    @PutMapping(path = "/{flashcardSetId}")
+    public void updateFlashcardSet(@PathVariable("flashcardSetId") String flashcardSetId,
+                                   @RequestParam(required = false) String setName) {
+        flashcardSetService.updateFlashcardSet(flashcardSetId, setName);
     }
 }
