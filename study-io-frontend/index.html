@@ -2,11 +2,22 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React + TS</title>
+    <title>Study.io</title>
+    <link href="./src/index.css" rel="stylesheet" >
   </head>
   <body>
+    <nav>
+      <div class="flex-container" id="container-left">
+        <h3 class="nav-title">Study.io</h3>
+      </div>
+      <ul class="flex-container" id="container-right">
+        <a class="nav-link">Resume</a>
+        <a class="nav-link" href="https://github.com/EvanPolk/study.io">Github</a>
+        <a class="nav-link" href="https://www.linkedin.com/in/evan-polk-6547412a0/">LinkedIn</a>
+      </ul>
+    </nav>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
