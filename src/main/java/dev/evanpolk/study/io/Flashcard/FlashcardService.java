@@ -21,8 +21,8 @@ public class FlashcardService {
         return flashcardRepository.findFlashcardById(id).orElse(null);
     }
 
-    public void addNewFlashcard(Flashcard flashcard) {
-        flashcardRepository.save(flashcard);
+    public void addNewFlashcard(String front, String back) {
+        flashcardRepository.save(new Flashcard(front, back));
     }
 
     public void deleteFlashcardById(String id) {

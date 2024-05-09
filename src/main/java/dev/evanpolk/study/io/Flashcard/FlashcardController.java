@@ -16,19 +16,20 @@ public class FlashcardController {
         this.flashcardService = flashcardService;
     }
 
-    @GetMapping("/")
-    public List<Flashcard> getAllFlashcards() {
-        return flashcardService.getAllFlashcards();
-    }
+//    @GetMapping
+//    public List<Flashcard> getAllFlashcards() {
+//        return flashcardService.getAllFlashcards();
+//    }
 
     @GetMapping(path = "/{flashcardId}")
     public Flashcard getFlashcardById(@PathVariable("flashcardId") String flashcardId) {
         return flashcardService.getFlashcardById(flashcardId);
     }
 
-    @PostMapping(path = "/")
-    public void addNewFlashcard(@RequestBody Flashcard flashcard) {
-        flashcardService.addNewFlashcard(flashcard);
+    @PostMapping
+    public void addNewFlashcard(@RequestParam String front,
+                                @RequestParam String back) {
+        flashcardService.addNewFlashcard(front , back);
     }
 
     @DeleteMapping(path = "/{flashcardId}")
