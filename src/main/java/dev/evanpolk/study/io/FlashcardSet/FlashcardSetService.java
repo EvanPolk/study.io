@@ -68,8 +68,8 @@ public class FlashcardSetService {
                 .orElseThrow(() -> new IllegalArgumentException(
                         "FlashcardSet with id: " + flashcardSetId + ", does not exist"
                 ));
-        if (flashcardSet.getSetName() != null &&
-                !flashcardSet.getSetName().isEmpty() &&
+        if (setName != null &&
+                !setName.isEmpty() &&
                 !flashcardSet.getSetName().equals(setName)) {
             flashcardSet.setSetName(setName);
         }
