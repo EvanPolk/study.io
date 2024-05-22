@@ -12,6 +12,7 @@ p {
   height: 13.5rem;
   margin: 1rem;
   border-radius: 0.5rem;
+  text-align: center;
 }
 
 .label {

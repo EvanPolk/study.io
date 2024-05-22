@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@CrossOrigin(origins = "*")
+@CrossOrigin(methods = {RequestMethod.GET, RequestMethod.DELETE, RequestMethod.PUT, RequestMethod.POST, RequestMethod.OPTIONS}, origins = "*")
 @RequestMapping(path="api/v1/flashcards")
 public class FlashcardController {
     private final FlashcardService flashcardService;
@@ -28,16 +28,16 @@ public class FlashcardController {
     }
 
     //    Shouldn't need to add without set
-    //    @PostMapping
-    //    public void addNewFlashcard(@RequestParam String front,
-    //                                @RequestParam String back) {
-    //        flashcardService.addNewFlashcard(front , back);
-    //    }
+    // @PostMapping
+    // public void addNewFlashcard(@RequestParam String front,
+    //                             @RequestParam String back) {
+    //     flashcardService.addNewFlashcard(front , back);
+    // }
     //    Shouldn't need to delete without set
-    //    @DeleteMapping(path = "/{flashcardId}")
-    //    public void deleteFlashcard(@PathVariable("flashcardId") String flashcardId) {
-    //        flashcardService.deleteFlashcardById(flashcardId);
-    //    }
+    // @DeleteMapping(path = "/{flashcardId}")
+    // public void deleteFlashcard(@PathVariable("flashcardId") String flashcardId) {
+    //     flashcardService.deleteFlashcardById(flashcardId);
+    // }
 
     @PutMapping(path = "/{flashcardId}")
     public void updateFlashcard(@PathVariable("flashcardId") String flashcardId,

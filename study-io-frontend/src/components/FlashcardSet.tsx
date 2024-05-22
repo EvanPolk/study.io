@@ -32,9 +32,12 @@ function FlashcardSet({ flashcardSet, onDelete }: Props) {
   const handleChangeName = async () => {
     if (nameChange) {
       flashcardSet.setName = nameInput;
-      await axios.put("http://localhost:8080/api/v1/flashcardSets/" + id, {
-        setName: nameInput,
-      });
+      await axios.put(
+        "http://localhost:8080/api/v1/flashcardSets/" +
+          id +
+          "?setName=" +
+          nameInput
+      );
       toggleNameChange(false);
     } else {
       toggleNameChange(true);
@@ -49,29 +52,45 @@ function FlashcardSet({ flashcardSet, onDelete }: Props) {
     <div className="flashcardSet" id={id}>
       <div className="label">
         {nameChange ? (
-          <input type="text" onChange={handleChangeInput}></input>
+          <div className="container-fluid d-flex justify-content-around">
+            <input
+              type="text"
+              placeholder={setName}
+              onChange={handleChangeInput}
+            ></input>
+          </div>
         ) : (
           <h4>{setName}</h4>
         )}
         <p className="m-0">{flashcards.length}</p>
-        <div className="container-fluid d-flex justify-content-around">
-          <a href={"http://localhost:5173/flashcardSet/" + id}>
-            <button className="btn btn-primary btn-large m-2">
-              Explore Set
+        {nameChange ? (
+          <div></div>
+        ) : (
+          <div className="container-fluid d-flex justify-content-around">
+            <a href={"http://localhost:5173/flashcardSet/" + id}>
+              <button className="btn btn-primary btn-large m-2">
+                Explore Set
+              </button>
+            </a>
+            <button
+              className="btn btn-danger btn-large m-2"
+              onClick={() => handleDelete(id)}
+            >
+              Delete Set
             </button>
-          </a>
-          <button
-            className="btn btn-danger btn-large m-2"
-            onClick={() => handleDelete(id)}
-          >
-            Delete Set
-          </button>
-        </div>
+          </div>
+        )}
       </div>
       <div className="mx-auto d-flex justify-content-around m-2">
-        <button className="btn btn-secondary" onClick={handleChangeName}>
-          Change name
-        </button>
+        {nameChange ? (
+          <button className="btn btn-success" onClick={handleChangeName}>
+            Confirm
+          </button>
+        ) : (
+          <button className="btn btn-secondary" onClick={handleChangeName}>
+            Change name
+          </button>
+        )}
       </div>
     </div>
   );
