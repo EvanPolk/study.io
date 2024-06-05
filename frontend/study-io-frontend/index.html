@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Study.io</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link href="src/index.css" rel="stylesheet" >
+  </head>
+  <body class="bg-zinc-700 font-sans w-screen h-screen">
+    <div class="w-screen flex justify-center items-center">
+      <nav class="sticky top-0 left-0 w-[98vw] h-16 flex flex-row
+      justify-between shadow-lg items-center rounded m-4 bg-neutral-800">
+        <div>
+          <a href="http://localhost:5173"><h2 class="text-center p-4 text-lg text-white transition-colors duration-300 ease-in-out hover:text-amber-400">Study.io</h1></a>
+        </div>
+        <ul class="flex flex-row justify-evenly items-center">
+          <a class="p-3 text-white transition-colors duration-300 ease-in-out hover:text-amber-400" href="public/Evan_Polk_Resume_4_20_24.pdf"><h5>Resume</h5></a>
+          <a class="p-3 text-white transition-colors duration-300 ease-in-out hover:text-amber-400" href="https://github.com/EvanPolk"><h5>Github</h5></a>
+          <a class="p-3 text-white transition-colors duration-300 ease-in-out hover:text-amber-400" href="https://www.linkedin.com/in/evan-polk-6547412a0/"><h5>LinkedIn</h5></a>
+        </ul>
+      </nav>
+    </div>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </body>
+</html>

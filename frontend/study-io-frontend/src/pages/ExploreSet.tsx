@@ -37,7 +37,6 @@ function ExploreSet() {
     <>
       {flashcardSet !== null ? (
         <Flashcard
-          key={flashcardSet.id}
           flashcardSet={flashcardSet}
           fetchFlashcardSet={fetchFlashcardSet}
         />

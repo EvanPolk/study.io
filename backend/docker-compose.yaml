@@ -6,7 +6,7 @@ services:
     container_name: mongodb
   spring-boot-app:
     build:
-      dockerfile: ./Dockerfile
+      dockerfile: Dockerfile
     container_name: spring-boot-app
     ports:
       - "8080:8080"

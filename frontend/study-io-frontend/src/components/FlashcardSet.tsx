@@ -1,6 +1,10 @@
 import "./FlashcardSet.css";
 import axios from "axios";
 import { ChangeEvent, useState } from "react";
+import FaSearch from "./Icons/FaSearch";
+import FaPen from "./Icons/FaPen";
+import FaTrash from "./Icons/FaTrash";
+import FaCheck from "./Icons/FaCheck";
 
 interface Props {
   flashcardSet: {
@@ -49,48 +53,49 @@ function FlashcardSet({ flashcardSet, onDelete }: Props) {
   };
 
   return (
-    <div className="flashcardSet" id={id}>
-      <div className="label">
+    <div
+      className="flex items-center justify-center aspect-[5/3] w-72 bg-zinc-600 text-white rounded-xl m-4 shadow-lg"
+      id={id}
+    >
+      <div className="flex flex-col justify-around items-center w-[100%] h-[100%]">
         {nameChange ? (
-          <div className="container-fluid d-flex justify-content-around">
+          <div>
             <input
+              key="setInputs"
+              value={nameInput}
               type="text"
+              className="outline-none text-black"
               placeholder={setName}
               onChange={handleChangeInput}
             ></input>
           </div>
         ) : (
-          <h4>{setName}</h4>
+          <h4 className="text-amber-400">{setName}</h4>
         )}
-        <p className="m-0">{flashcards.length}</p>
-        {nameChange ? (
-          <div></div>
-        ) : (
-          <div className="container-fluid d-flex justify-content-around">
-            <a href={"http://localhost:5173/flashcardSet/" + id}>
-              <button className="btn btn-primary btn-large m-2">
-                Explore Set
-              </button>
-            </a>
-            <button
-              className="btn btn-danger btn-large m-2"
-              onClick={() => handleDelete(id)}
-            >
-              Delete Set
-            </button>
-          </div>
-        )}
-      </div>
-      <div className="mx-auto d-flex justify-content-around m-2">
-        {nameChange ? (
-          <button className="btn btn-success" onClick={handleChangeName}>
-            Confirm
-          </button>
-        ) : (
-          <button className="btn btn-secondary" onClick={handleChangeName}>
-            Change name
-          </button>
-        )}
+        {nameChange ? <></> : <p className="">{flashcards.length} cards</p>}
+        <div className="flex flex-row w-[90%] p-2 m-2 rounded justify-around bg-zinc-500">
+          {nameChange ? (
+            <></>
+          ) : (
+            <>
+              <a href={"http://localhost:5173/flashcardSet/" + id}>
+                <FaSearch />
+              </a>
+              <i onClick={() => handleDelete(id)}>
+                <FaTrash />
+              </i>
+            </>
+          )}
+          {nameChange ? (
+            <i onClick={handleChangeName}>
+              <FaCheck />
+            </i>
+          ) : (
+            <i onClick={handleChangeName}>
+              <FaPen />
+            </i>
+          )}
+        </div>
       </div>
     </div>
   );

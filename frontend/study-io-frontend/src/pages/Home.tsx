@@ -40,7 +40,7 @@ function Home() {
   };
 
   return (
-    <div className="container-fluid d-flex flex-wrap align-items-start">
+    <div className="flex flex-wrap flex-row">
       <AddFlashcardSet fetchFlashcardSets={fetchFlashcardSets} />
       {flashcardSets.map((flashcardSet: any, idx: number) => (
         <FlashcardSet
