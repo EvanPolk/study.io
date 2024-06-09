@@ -1,5 +1,6 @@
 import "./FlashcardSet.css";
 import axios from "axios";
+import instance from "../axiosInstance";
 import { ChangeEvent, useState } from "react";
 import FaSearch from "./Icons/FaSearch";
 import FaPen from "./Icons/FaPen";
@@ -26,7 +27,7 @@ function FlashcardSet({ flashcardSet, onDelete }: Props) {
 
   const handleDelete = async (id: string): Promise<void> => {
     try {
-      await axios.delete("http://localhost:8080/api/v1/flashcardSets/" + id);
+      await instance.delete("/flashcardSets/" + id);
       onDelete(id);
     } catch (err) {
       throw err;
@@ -36,12 +37,7 @@ function FlashcardSet({ flashcardSet, onDelete }: Props) {
   const handleChangeName = async () => {
     if (nameChange) {
       flashcardSet.setName = nameInput;
-      await axios.put(
-        "http://localhost:8080/api/v1/flashcardSets/" +
-          id +
-          "?setName=" +
-          nameInput
-      );
+      await instance.put("/flashcardSets/" + id + "?setName=" + nameInput);
       toggleNameChange(false);
     } else {
       toggleNameChange(true);

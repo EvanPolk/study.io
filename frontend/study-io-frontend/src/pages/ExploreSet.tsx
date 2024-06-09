@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import instance from "../axiosInstance";
 import { useParams } from "react-router-dom";
 import Flashcard from "../components/Flashcard";
 
@@ -22,8 +23,8 @@ function ExploreSet() {
   }, []);
 
   const fetchFlashcardSet = async () => {
-    await axios
-      .get("http://localhost:8080/api/v1/flashcardSets/" + setId)
+    await instance
+      .get("/flashcardSets/" + setId)
       .then((res) => {
         setFlashcardSet(res.data);
       })
