@@ -1,0 +1,7 @@
+.is-flipped {
+  transform: rotateX(180deg)
+}
+
+.no-events {
+  pointer-events: none;
+}
