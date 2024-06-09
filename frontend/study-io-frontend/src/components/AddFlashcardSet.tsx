@@ -1,5 +1,4 @@
 import { ChangeEvent, useState } from "react";
-import axios from "axios";
 import instance from "../axiosInstance";
 
 interface Props {

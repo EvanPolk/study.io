@@ -1,5 +1,4 @@
 import "./FlashcardSet.css";
-import axios from "axios";
 import instance from "../axiosInstance";
 import { ChangeEvent, useState } from "react";
 import FaSearch from "./Icons/FaSearch";

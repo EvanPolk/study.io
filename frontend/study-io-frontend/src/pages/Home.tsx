@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import axios from "axios";
+import instance from "../axiosInstance";
 
 import FlashcardSet from "../components/FlashcardSet";
 import AddFlashcardSet from "../components/AddFlashcardSet";
@@ -16,14 +16,13 @@ interface FlashcardSet {
 
 function Home() {
   const [flashcardSets, setFlashcardSets] = useState([]);
-
   useEffect(() => {
     fetchFlashcardSets();
   }, []);
 
   const fetchFlashcardSets = () => {
-    axios
-      .get("http://localhost:8080/api/v1/flashcardSets")
+    instance
+      .get("/flashcardSets")
       .then((res) => {
         setFlashcardSets(res.data);
       })
