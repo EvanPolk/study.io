@@ -25,7 +25,6 @@ function ExploreSet() {
     await axios
       .get("http://localhost:8080/api/v1/flashcardSets/" + setId)
       .then((res) => {
-        console.log(res.data);
         setFlashcardSet(res.data);
       })
       .catch((err) => {
