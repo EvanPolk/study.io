@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
-import Home from "./pages/Home";
-import ExploreSet from "./pages/ExploreSet";
+import Home from "./pages/Home.tsx";
+import ExploreSet from "./pages/ExploreSet.tsx";
 
 function App() {
   return (

@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
-import instance from "../axiosInstance";
+import instance from "../axiosInstance.ts";
 
-import FlashcardSet from "../components/FlashcardSet";
-import AddFlashcardSet from "../components/AddFlashcardSet";
+import FlashcardSet from "../components/FlashcardSet.tsx";
+import AddFlashcardSet from "../components/AddFlashcardSet.tsx";
 
 interface FlashcardSet {
   id: string;
