@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import instance from "../axiosInstance.ts";
+import instance from "../axiosInstance";
 import { useParams } from "react-router-dom";
-import Flashcard from "../components/Flashcard.tsx";
+import Flashcard from "../components/Flashcard";
 
 interface FlashcardSet {
   id: string;

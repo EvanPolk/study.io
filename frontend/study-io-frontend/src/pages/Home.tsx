@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
-import instance from "../axiosInstance.ts";
+import instance from "../axiosInstance";
 
-import FlashcardSet from "../components/FlashcardSet.tsx";
-import AddFlashcardSet from "../components/AddFlashcardSet.tsx";
+import FlashcardSet from "../components/FlashcardSet";
+import AddFlashcardSet from "../components/AddFlashcardSet";
 
 interface FlashcardSet {
   id: string;
@@ -23,10 +23,10 @@ function Home() {
   const fetchFlashcardSets = () => {
     instance
       .get("/flashcardSets")
-      .then((res) => {
+      .then((res: any) => {
         setFlashcardSets(res.data);
       })
-      .catch((err) => {
+      .catch((err: any) => {
         console.error(err);
       });
   };

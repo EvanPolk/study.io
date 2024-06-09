@@ -1,5 +1,5 @@
 import { ChangeEvent, useState } from "react";
-import instance from "../axiosInstance.ts";
+import instance from "../axiosInstance";
 
 interface Props {
   fetchFlashcardSets: () => void;

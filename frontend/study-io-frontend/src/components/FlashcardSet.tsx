@@ -1,10 +1,10 @@
 import "./FlashcardSet.css";
-import instance from "../axiosInstance.ts";
+import instance from "../axiosInstance";
 import { ChangeEvent, useState } from "react";
-import FaSearch from "./Icons/FaSearch.tsx";
-import FaPen from "./Icons/FaPen.tsx";
-import FaTrash from "./Icons/FaTrash.tsx";
-import FaCheck from "./Icons/FaCheck.tsx";
+import FaSearch from "./Icons/FaSearch";
+import FaPen from "./Icons/FaPen";
+import FaTrash from "./Icons/FaTrash";
+import FaCheck from "./Icons/FaCheck";
 
 interface Props {
   flashcardSet: {
