@@ -43,7 +43,7 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-  Study.io is a quizlet-like flashcard app I started making during my finals week. It using MongoDB integrated with a Spring boot REST API to allow for persistance. On the frontend, I used react with typescript to allow the user to easily change different aspects of their flashcard sets. I wanted to challenge myself with this project, so the idea of modeling more complex relational databases within a spring ORM seemed like a good place to start. Adding frontend capabilities allowed me to better understand the interactions between both sides of a websites architecture.
+  Study.io is a quizlet-like flashcard app I started making during my finals week. It uses MongoDB integrated with a Spring boot REST API to allow for persistance. On the frontend, I used react with typescript to allow the user to easily change different aspects of their flashcard sets. I wanted to challenge myself with this project, so the idea of modeling more complex relational databases within a spring ORM seemed like a good place to start. Adding frontend capabilities allowed me to better understand the interactions between both sides of a websites architecture.
 
 ### Built With
 
@@ -51,7 +51,7 @@
 * Spring Web
 * Spring Data MongoDB
 * React with typescript
-* Bootstrap CSS
+* Tailwind CSS
 * Docker
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -261,7 +261,7 @@ PUT /api/v1/flashcards/664e2134c727d925790397ea?front=new+front&back=new+back
 
 - [ ] Greater functionality with a spaced repitition algorithm
 - [ ] Front end re-styling
-    - [ ] Switch to tailwind with more customized styling
+    - [X] Switch to tailwind with more customized styling
     - [ ] Animations to allow hidden front or back card to allow for a smoother user experience
 
 See the [open issues](https://github.com/EvanPolk/study.io/issues) for a full list of proposed features (and known issues).
