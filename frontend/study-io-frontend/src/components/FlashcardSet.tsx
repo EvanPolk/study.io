@@ -73,7 +73,7 @@ function FlashcardSet({ flashcardSet, onDelete }: Props) {
             <></>
           ) : (
             <>
-              <a href={"http://localhost:5173/flashcardSet/" + id}>
+              <a href={"/flashcardSet/" + id}>
                 <FaSearch />
               </a>
               <i onClick={() => handleDelete(id)}>
