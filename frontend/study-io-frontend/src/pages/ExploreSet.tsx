@@ -24,10 +24,10 @@ function ExploreSet() {
   const fetchFlashcardSet = async () => {
     await instance
       .get("/flashcardSets/" + setId)
-      .then((res) => {
+      .then((res: any) => {
         setFlashcardSet(res.data);
       })
-      .catch((err) => {
+      .catch((err: any) => {
         throw err;
       });
   };
