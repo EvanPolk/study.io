@@ -3,7 +3,7 @@
 <h3 align="center">Study.io</h3>
 
   <p align="center">
-    Fullstack CRUD app using Spring Boot, MongoDB, and React with typescript
+    Fullstack CRUD app using Spring Boot, MongoDB, and React with typescript: https://study-io-fawn.vercel.app/
     <br />
     <a href="https://github.com/EvanPolk/study.io/issues">Report Bug</a>
     ·
