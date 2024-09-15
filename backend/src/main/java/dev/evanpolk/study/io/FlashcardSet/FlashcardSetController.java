@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@CrossOrigin(methods = {RequestMethod.GET, RequestMethod.DELETE, RequestMethod.PUT, RequestMethod.POST, RequestMethod.OPTIONS}, origins = "*")
 @RequestMapping(path="api/v1/flashcardSets")
 public class FlashcardSetController {
     private final FlashcardSetService flashcardSetService;
