@@ -1,4 +1,4 @@
-package dev.evanpolk.study.io;
+package dev.evanpolk.study.io.Config;
 
 import dev.evanpolk.study.io.Flashcard.Flashcard;
 import dev.evanpolk.study.io.Flashcard.FlashcardRepository;
