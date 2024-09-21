@@ -45,11 +45,11 @@ function Flashcard({ flashcardSet, fetchFlashcardSet }: Props) {
       flashcardSet.flashcards[counter].back = backInput;
       await instance.put(
         "/flashcards/" +
-          flashcardSet.flashcards[counter].id +
-          "?front=" +
-          frontInput +
-          "&back=" +
-          backInput
+        flashcardSet.flashcards[counter].id +
+        "?front=" +
+        frontInput +
+        "&back=" +
+        backInput
       );
       toggleEdit(false);
     } else {
@@ -88,10 +88,12 @@ function Flashcard({ flashcardSet, fetchFlashcardSet }: Props) {
     } else {
       setCounter((counter - 1) % flashcardSet.flashcards.length);
     }
+    toggleFlip(true);
   };
 
   const handleRightButton = () => {
     setCounter((counter + 1) % flashcardSet.flashcards.length);
+    toggleFlip(true);
   };
 
   const handleFlip = (event: any) => {

@@ -1,6 +1,6 @@
-package dev.evanpolk.study.io.FlashcardSet;
+package dev.evanpolk.study.io.flashcardSet;
 
-import dev.evanpolk.study.io.Flashcard.Flashcard;
+import dev.evanpolk.study.io.flashcard.Flashcard;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

@@ -1,9 +1,12 @@
 package dev.evanpolk.study.io;
 
+import dev.evanpolk.study.io.config.DatabaseConfig;
+import dev.evanpolk.study.io.config.WebSecurityConfig;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.ComponentScan;
 
-@SpringBootApplication(scanBasePackages = {"dev.evanpolk.study.io.Flashcard", "dev.evanpolk.study.io.FlashcardSet"})
+@SpringBootApplication
 public class Application {
 
 	public static void main(String[] args) {

@@ -27,7 +27,8 @@ function Home() {
         setFlashcardSets(res.data);
       })
       .catch((err: any) => {
-        console.error(err);
+        fetchFlashcardSets()
+        console.error(err)
       });
   };
 
@@ -39,16 +40,22 @@ function Home() {
   };
 
   return (
-    <div className="flex flex-wrap flex-row">
-      <AddFlashcardSet fetchFlashcardSets={fetchFlashcardSets} />
-      {flashcardSets.map((flashcardSet: any, idx: number) => (
-        <FlashcardSet
-          key={idx}
-          flashcardSet={flashcardSet}
-          onDelete={onDelete}
-        />
-      ))}
-    </div>
+    flashcardSets.length == 0 ?
+      <div className="flex flex-wrap flex-row">
+        <div className="p-2 m-2 rounded bg-zinc-600 text-white">
+          <h1>This site is partially hosted on Azure. Please be patient as the Backend spins up!</h1>
+        </div>
+      </div> :
+      <div className="flex flex-wrap flex-row">
+        <AddFlashcardSet fetchFlashcardSets={fetchFlashcardSets} />
+        {flashcardSets.map((flashcardSet: any, idx: number) => (
+          <FlashcardSet
+            key={idx}
+            flashcardSet={flashcardSet}
+            onDelete={onDelete}
+          />
+        ))}
+      </div>
   );
 }
 

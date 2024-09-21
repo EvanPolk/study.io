@@ -1,4 +1,4 @@
-package dev.evanpolk.study.io.Flashcard;
+package dev.evanpolk.study.io.flashcard;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

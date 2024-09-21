@@ -1,7 +1,7 @@
-package dev.evanpolk.study.io.FlashcardSet;
+package dev.evanpolk.study.io.flashcardSet;
 
-import dev.evanpolk.study.io.Flashcard.Flashcard;
-import dev.evanpolk.study.io.Flashcard.FlashcardRepository;
+import dev.evanpolk.study.io.flashcard.Flashcard;
+import dev.evanpolk.study.io.flashcard.FlashcardRepository;
 import org.springframework.stereotype.Service;
 import java.util.List;
 @Service

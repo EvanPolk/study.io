@@ -1,9 +1,9 @@
-package dev.evanpolk.study.io.Config;
+package dev.evanpolk.study.io.config;
 
-import dev.evanpolk.study.io.Flashcard.Flashcard;
-import dev.evanpolk.study.io.Flashcard.FlashcardRepository;
-import dev.evanpolk.study.io.FlashcardSet.FlashcardSet;
-import dev.evanpolk.study.io.FlashcardSet.FlashcardSetRepository;
+import dev.evanpolk.study.io.flashcard.Flashcard;
+import dev.evanpolk.study.io.flashcard.FlashcardRepository;
+import dev.evanpolk.study.io.flashcardSet.FlashcardSet;
+import dev.evanpolk.study.io.flashcardSet.FlashcardSetRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Configuration;
 import java.util.List;
 
 @Configuration
-public class FlashcardConfig {
+public class DatabaseConfig {
     @Bean
     CommandLineRunner commandLineRunner(FlashcardRepository flashcardRepository, FlashcardSetRepository flashcardSetRepository) {
         return args -> {
